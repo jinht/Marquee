@@ -3,6 +3,7 @@
 说一下初衷吧，最初要用到跑马灯功能的时候，也找过一些SDK，但未能找到与我需求很好契合的SDK，主要就是手势滑动后的问题（手势滑动push/pop时候跑马灯出现失灵的状况），故希望通过此SDK给予与我有同样需求的童鞋一些帮助。
 <br>
 
+
 ### 先上图，看一下是否符合你的场景吧！
 <img src="https://raw.githubusercontent.com/jinht/Marquee/master/ReadMEImages/1.gif"，width=250 height=350 />
 
