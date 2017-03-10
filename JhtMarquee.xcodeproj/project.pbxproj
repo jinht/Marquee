@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A522243F1E72A67A00BBA9F1 /* JhtMarqueeSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A522243C1E72A67A00BBA9F1 /* JhtMarqueeSDK.a */; };
 		A58F83E11E1120BE00E30D68 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A58F83E01E1120BE00E30D68 /* main.m */; };
 		A58F83E41E1120BE00E30D68 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A58F83E31E1120BE00E30D68 /* AppDelegate.m */; };
 		A58F83E71E1120BE00E30D68 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A58F83E61E1120BE00E30D68 /* ViewController.m */; };
@@ -16,7 +17,6 @@
 		A58F83FA1E1120BE00E30D68 /* JhtMarqueeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A58F83F91E1120BE00E30D68 /* JhtMarqueeTests.m */; };
 		A58F84051E1120BE00E30D68 /* JhtMarqueeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A58F84041E1120BE00E30D68 /* JhtMarqueeUITests.m */; };
 		A58F841D1E112B8900E30D68 /* testVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A58F841C1E112B8900E30D68 /* testVC.m */; };
-		A58F84511E1267CD00E30D68 /* JhtMarqueeSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A58F84501E1267CD00E30D68 /* JhtMarqueeSDK.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A522243B1E72A67A00BBA9F1 /* JhtHorizontalMarquee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtHorizontalMarquee.h; sourceTree = "<group>"; };
+		A522243C1E72A67A00BBA9F1 /* JhtMarqueeSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = JhtMarqueeSDK.a; sourceTree = "<group>"; };
+		A522243D1E72A67A00BBA9F1 /* JhtMarqueeSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtMarqueeSDK.h; sourceTree = "<group>"; };
+		A522243E1E72A67A00BBA9F1 /* JhtVerticalMarquee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtVerticalMarquee.h; sourceTree = "<group>"; };
 		A58F83DC1E1120BE00E30D68 /* JhtMarquee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JhtMarquee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A58F83E01E1120BE00E30D68 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A58F83E21E1120BE00E30D68 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -55,8 +59,6 @@
 		A58F84061E1120BE00E30D68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A58F841B1E112B8900E30D68 /* testVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testVC.h; sourceTree = "<group>"; };
 		A58F841C1E112B8900E30D68 /* testVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testVC.m; sourceTree = "<group>"; };
-		A58F844F1E1267CD00E30D68 /* JhtMarqueeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtMarqueeLabel.h; sourceTree = "<group>"; };
-		A58F84501E1267CD00E30D68 /* JhtMarqueeSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = JhtMarqueeSDK.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A58F84511E1267CD00E30D68 /* JhtMarqueeSDK.a in Frameworks */,
+				A522243F1E72A67A00BBA9F1 /* JhtMarqueeSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +87,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A522243A1E72A67A00BBA9F1 /* JhtMarqueeSDK */ = {
+			isa = PBXGroup;
+			children = (
+				A522243D1E72A67A00BBA9F1 /* JhtMarqueeSDK.h */,
+				A522243E1E72A67A00BBA9F1 /* JhtVerticalMarquee.h */,
+				A522243B1E72A67A00BBA9F1 /* JhtHorizontalMarquee.h */,
+				A522243C1E72A67A00BBA9F1 /* JhtMarqueeSDK.a */,
+			);
+			path = JhtMarqueeSDK;
+			sourceTree = "<group>";
+		};
 		A58F83D31E1120BE00E30D68 = {
 			isa = PBXGroup;
 			children = (
@@ -113,7 +126,7 @@
 				A58F83E51E1120BE00E30D68 /* ViewController.h */,
 				A58F83E61E1120BE00E30D68 /* ViewController.m */,
 				A58F841A1E112B7A00E30D68 /* testVC */,
-				A58F844E1E1267CD00E30D68 /* JhtMarqueeSDK */,
+				A522243A1E72A67A00BBA9F1 /* JhtMarqueeSDK */,
 				A58F83E81E1120BE00E30D68 /* Main.storyboard */,
 				A58F83EB1E1120BE00E30D68 /* Assets.xcassets */,
 				A58F83ED1E1120BE00E30D68 /* LaunchScreen.storyboard */,
@@ -156,15 +169,6 @@
 				A58F841C1E112B8900E30D68 /* testVC.m */,
 			);
 			path = testVC;
-			sourceTree = "<group>";
-		};
-		A58F844E1E1267CD00E30D68 /* JhtMarqueeSDK */ = {
-			isa = PBXGroup;
-			children = (
-				A58F844F1E1267CD00E30D68 /* JhtMarqueeLabel.h */,
-				A58F84501E1267CD00E30D68 /* JhtMarqueeSDK.a */,
-			);
-			path = JhtMarqueeSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
