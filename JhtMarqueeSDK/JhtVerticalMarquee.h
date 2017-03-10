@@ -38,8 +38,8 @@ typedef void(^verticalMarqueeBlock)(JhtVerticalMarquee *view, NSInteger currentI
 
 
 #pragma mark optional
-/** 当前显示展示的文字在数据源数组中的索引 */
-@property (nonatomic, assign) NSInteger index;
+/** 当前显示展示的文字在数据源数组中的索引_只读 */
+@property (nonatomic, assign, readonly) NSInteger index;
 
 /** 是否为逆时针滚动（default：NO）
  *  顺时针：底部 ===> 顶部
