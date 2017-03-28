@@ -34,12 +34,12 @@ typedef void(^verticalMarqueeBlock)(JhtVerticalMarquee *view, NSInteger currentI
 #pragma mark - Property
 #pragma mark required
 /** 滚动文字的 数据源数组 */
-@property (nonatomic, strong) NSArray <NSString *>*sourceArray;
+@property (nonatomic, strong) NSArray<NSString *> *sourceArray;
 
 
 #pragma mark optional
 /** 当前显示展示的文字在数据源数组中的索引_只读 */
-@property (nonatomic, assign, readonly) NSInteger index;
+@property (nonatomic, assign) NSInteger index;
 
 /** 是否为逆时针滚动（default：NO）
  *  顺时针：底部 ===> 顶部
@@ -47,18 +47,30 @@ typedef void(^verticalMarqueeBlock)(JhtVerticalMarquee *view, NSInteger currentI
  */
 @property (nonatomic, assign) BOOL isCounterclockwise;
 
-/** 单次滚动时间（default：0.5f） */
+/** 单次滚动时间
+ *  default：0.5f
+ */
 @property (nonatomic, assign) CGFloat scrollDuration;
-/** 滚动延迟（default：2.5f） */
+/** 滚动延迟
+ *  default：2.5f
+ */
 @property (nonatomic, assign) CGFloat scrollDelay;
 
-/** 滚动字的颜色（default：blackColor） */
+/** 滚动文字的颜色
+ *  default：[UIColor blackColor]
+ */
 @property (nonatomic, strong) UIColor *verticalTextColor;
-/** 滚动的字体（default：14） */
+/** 滚动文字的字体
+ *  default：[UIFont systemFontOfSize:14]
+ */
 @property (nonatomic, strong) UIFont *verticalTextFont;
-/** 显示内容的对齐方式（default：NSTextAlignmentLeft） */
+/** 显示文字的对齐方式
+ *  default：NSTextAlignmentLeft
+ */
 @property (nonatomic, assign) NSTextAlignment verticalTextAlignment;
-/** 显示内容的行数（default：2） */
+/** 显示文字的行数
+ *  default：2（注意一下frame.width的设置）
+ */
 @property (nonatomic, assign) NSInteger verticalNumberOfLines;
 
 

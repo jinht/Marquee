@@ -24,7 +24,7 @@
     // 上下滚动的跑马灯
     JhtVerticalMarquee *_verticalMarquee;
     // 是否暂停了上下滚动的跑马灯
-    BOOL _isPauseVer;
+    BOOL _isPauseV;
 }
 
 @end
@@ -35,9 +35,10 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     // 如果暂停了，使用继续方式开启
-    if (_isPauseVer) {
+    if (_isPauseV) {
         [_verticalMarquee marqueeOfSettingWithState:MarqueeContinue_V];
     }
+    
     // 开启跑马灯
     [_horizontalMarquee marqueeOfSettingWithState:MarqueeStart_H];
 }
@@ -88,7 +89,7 @@
 }
 
 - (void)labsHorizontalMarqueeTapGes:(UITapGestureRecognizer *)ges {
-    NSLog(@"点击水平滚动的跑马灯啦啊！！！");
+    NSLog(@"点击__水平__滚动的跑马灯啦啊！！！");
     [self.navigationController pushViewController:[[testVC alloc] init] animated:YES];
 }
 
@@ -121,7 +122,7 @@
 - (void)labsVerticalMarqueeTapGes:(UITapGestureRecognizer *)ges {
     NSLog(@"点击第 %ld 条数据啦啊！！！", _verticalMarquee.index);
     [_verticalMarquee marqueeOfSettingWithState:MarqueePause_V];
-    _isPauseVer = YES;
+    _isPauseV = YES;
     
     [self.navigationController pushViewController:[[testVC alloc] init] animated:YES];
 }
