@@ -63,39 +63,51 @@
         self.navigationController.interactivePopGestureRecognizer.delegate = self;
     }
     
+    // 创建UI界面
+    [self createUI];
+}
+
+
+
+#pragma mark - UI
+/** 创建UI界面 */
+- (void)createUI {
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.title = @"JhtMarqueeDemo";
     
     // 添加水平滚动的跑马灯
-    [self labsCreateHorizontalMarquee];
+    [self addHorizontalMarquee];
     
     // 添加上下滚动的跑马灯
-    [self labsCreateVerticalMarquee];
+    [self addVerticalMarquee];
 }
 
 
-
-#pragma mark - 添加跑马灯
 #pragma mark 水平滚动的跑马灯
-- (void)labsCreateHorizontalMarquee {
+/** 添加水平滚动的跑马灯 */
+- (void)addHorizontalMarquee {
     _horizontalMarquee = [[JhtHorizontalMarquee alloc] initWithFrame:CGRectMake(0, 64, FrameW, 40) withSingleScrollDuration:10.0];
     _horizontalMarquee.text = @"这是一个跑马灯View，测试一下好不好用，哈哈哈，😁👌😀 😁👌😀 😁👌😀 😁👌😀 哈哈哈哈！ ";
     [self.view addSubview:_horizontalMarquee];
     
     // 给跑马灯添加点击手势
-    UITapGestureRecognizer *htap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(labsHorizontalMarqueeTapGes:)];
+    UITapGestureRecognizer *htap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(horizontalMarqueeTapGes:)];
     [_horizontalMarquee addGestureRecognizer:htap];
 }
 
-- (void)labsHorizontalMarqueeTapGes:(UITapGestureRecognizer *)ges {
+- (void)horizontalMarqueeTapGes:(UITapGestureRecognizer *)ges {
     NSLog(@"点击__水平__滚动的跑马灯啦啊！！！");
+    [_verticalMarquee marqueeOfSettingWithState:MarqueePause_V];
+    _isPauseV = YES;
+    
     [self.navigationController pushViewController:[[testVC alloc] init] animated:YES];
 }
 
 
 #pragma mark 上下滚动的跑马灯
-- (void)labsCreateVerticalMarquee {
+/** 添加上下滚动的跑马灯 */
+- (void)addVerticalMarquee {
     _verticalMarquee = [[JhtVerticalMarquee alloc]  initWithFrame:CGRectMake(10, 200, FrameW - 20, 45)];
     [self.view addSubview:_verticalMarquee];
     _verticalMarquee.backgroundColor = [UIColor yellowColor];
@@ -115,11 +127,11 @@
     [_verticalMarquee marqueeOfSettingWithState:MarqueeStart_V];
     
     // 给跑马灯添加点击手势
-    UITapGestureRecognizer *vtap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(labsVerticalMarqueeTapGes:)];
+    UITapGestureRecognizer *vtap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(verticalMarqueeTapGes:)];
     [_verticalMarquee addGestureRecognizer:vtap];
 }
 
-- (void)labsVerticalMarqueeTapGes:(UITapGestureRecognizer *)ges {
+- (void)verticalMarqueeTapGes:(UITapGestureRecognizer *)ges {
     NSLog(@"点击第 %ld 条数据啦啊！！！", _verticalMarquee.index);
     [_verticalMarquee marqueeOfSettingWithState:MarqueePause_V];
     _isPauseV = YES;
