@@ -69,7 +69,7 @@ typedef void(^verticalMarqueeBlock)(JhtVerticalMarquee *view, NSInteger currentI
  */
 @property (nonatomic, assign) NSTextAlignment verticalTextAlignment;
 /** 显示文字的行数
- *  default：2（注意一下frame.width的设置）
+ *  default：2（注意一下self.frame的设置）
  */
 @property (nonatomic, assign) NSInteger verticalNumberOfLines;
 
@@ -77,7 +77,7 @@ typedef void(^verticalMarqueeBlock)(JhtVerticalMarquee *view, NSInteger currentI
 
 #pragma mark - Public Method
 /** 设置跑马灯状态
- *  marqueeState：跑马灯状态（枚举）
+ *  marqueeState：跑马灯状态（MarqueeState_V）
  */
 - (void)marqueeOfSettingWithState:(MarqueeState_V)marqueeState;
 
