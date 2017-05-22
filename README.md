@@ -84,30 +84,18 @@
  */
 @property (nonatomic, assign) BOOL isCounterclockwise;
 
-/** 单次滚动时间
- *  default：0.5f
- */
+/** 单次滚动时间（default：0.5f） */
 @property (nonatomic, assign) CGFloat scrollDuration;
-/** 滚动延迟
- *  default：2.5f
- */
+/** 滚动延迟（default：2.5f） */
 @property (nonatomic, assign) CGFloat scrollDelay;
 
-/** 滚动文字的颜色
- *  default：[UIColor blackColor]
- */
+/** 滚动字的颜色（default：blackColor） */
 @property (nonatomic, strong) UIColor *verticalTextColor;
-/** 滚动文字的字体
- *  default：[UIFont systemFontOfSize:14]
- */
+/** 滚动的字体（default：14） */
 @property (nonatomic, strong) UIFont *verticalTextFont;
-/** 显示文字的对齐方式
- *  default：NSTextAlignmentLeft
- */
+/** 显示内容的对齐方式（default：NSTextAlignmentLeft） */
 @property (nonatomic, assign) NSTextAlignment verticalTextAlignment;
-/** 显示文字的行数
- *  default：2（注意一下frame.width的设置）
- */
+/** 显示内容的行数（default：2） */
 @property (nonatomic, assign) NSInteger verticalNumberOfLines;
 ```
 
