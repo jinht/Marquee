@@ -5,7 +5,7 @@
 
 
 ### 先上图，看一下是否符合你的场景吧！
-<img src="https://raw.githubusercontent.com/jinht/Marquee/master/ReadMEImages/1.gif" width=250 height=445 />
+<img src="https://raw.githubusercontent.com/jinht/Marquee/master/ReadMEImages/1.gif" width=240 height=426 />
 
 
 ### Function Description
