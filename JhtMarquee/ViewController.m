@@ -132,7 +132,7 @@
 }
 
 - (void)verticalMarqueeTapGes:(UITapGestureRecognizer *)ges {
-    NSLog(@"点击第 %ld 条数据啦啊！！！", _verticalMarquee.index);
+    NSLog(@"点击第 %ld 条数据啦啊！！！", _verticalMarquee.currentIndex);
     [_verticalMarquee marqueeOfSettingWithState:MarqueePause_V];
     _isPauseV = YES;
     
