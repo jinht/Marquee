@@ -112,11 +112,28 @@
     [self.view addSubview:_verticalMarquee];
     _verticalMarquee.backgroundColor = [UIColor yellowColor];
     _verticalMarquee.verticalTextColor = [UIColor purpleColor];
+//    NSArray *soureArray = @[@"1. 谁曾从谁的青春里走过，留下了笑靥",
+//                            @"2. 谁曾在谁的花季里停留，温暖了想念",
+//                            @"3. 谁又从谁的雨季里消失，泛滥了眼泪",
+//                            @"4. 人生路，路迢迢，谁道自古英雄多寂寥，若一朝，看透了，一身清风挣多少"
+//                            ];
+    
+    NSString *str = @"谁曾在谁的花季里停留，温暖了想念";
+    // 创建NSMutableAttributedString
+    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc]initWithString:str];
+    // 设置字体和设置字体的范围
+    [attrStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:30.0f] range:NSMakeRange(0, 3)];
+    // 添加文字颜色
+    [attrStr addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(4, 2)];
+    // 添加文字背景颜色
+    [attrStr addAttribute:NSBackgroundColorAttributeName value:[UIColor orangeColor] range:NSMakeRange(7, 2)];
+    // 添加下划线
+    [attrStr addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(11, 5)];
     NSArray *soureArray = @[@"1. 谁曾从谁的青春里走过，留下了笑靥",
-                            @"2. 谁曾在谁的花季里停留，温暖了想念",
+                            attrStr,
                             @"3. 谁又从谁的雨季里消失，泛滥了眼泪",
-                            @"4. 人生路，路迢迢，谁道自古英雄多寂寥，若一朝，看透了，一身清风挣多少"
-                            ];
+                            @"4. 人生路，路迢迢，谁道自古英雄多寂寥，若一朝，看透了，一身清风挣多少"];
+    
 //    _verticalMarquee.isCounterclockwise = YES;
     _verticalMarquee.sourceArray = soureArray;
     [_verticalMarquee scrollWithCallbackBlock:^(JhtVerticalMarquee *view, NSInteger currentIndex) {

@@ -33,8 +33,8 @@ typedef void(^verticalMarqueeBlock)(JhtVerticalMarquee *view, NSInteger currentI
 
 #pragma mark - Property
 #pragma mark required
-/** 滚动文字的 数据源数组 */
-@property (nonatomic, strong) NSArray<NSString *> *sourceArray;
+/** 滚动文字的 数据源数组（支持attributedText与text混合） */
+@property (nonatomic, strong) NSArray *sourceArray;
 
 
 #pragma mark optional

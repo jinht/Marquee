@@ -9,6 +9,8 @@
 //  Copyright © 2016年 JhtMarquee. All rights reserved.
 //
 
+/************支持attributedText************/
+
 #import <UIKit/UIKit.h>
 
 /** 跑马灯状态_枚举 */
