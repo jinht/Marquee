@@ -9,12 +9,12 @@
 
 
 ### Function Description
-1. 水平 && 上下（正向 && 逆向）
-2. 轻量级跑马灯
-3. 前/后台切换重新加载
-4. 随时获取跑马灯状态
-5. 支持attributedText
-6. 手势push/pop后自动滚动<br>
+1. 轻量级跑马灯
+2. 支持attributedText
+3. 随时获取跑马灯状态
+4. 前/后台切换重新加载
+5. 水平 && 上下（正向 && 逆向）
+6. push/pop || 前后台切换 || 手势返回后自动滚动<br>
 
 
 ## How to use
