@@ -13,7 +13,8 @@
 2. 轻量级跑马灯
 3. 前/后台切换重新加载
 4. 随时获取跑马灯状态
-5. 手势push/pop后自动滚动<br>
+5. 支持attributedText
+6. 手势push/pop后自动滚动<br>
 
 
 ## How to use
@@ -110,4 +111,3 @@
 ## Hope
 * If you find bug when used，Hope you can Issues me，Thank you or try to download the latest code of this framework to see the BUG has been fixed or not
 * If you find the function is not enough when used，Hope you can Issues me，I very much to add more useful function to this framework ，Thank you !
-
