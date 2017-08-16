@@ -25,12 +25,6 @@ typedef NS_ENUM(NSUInteger, MarqueeState_V) {
 
 /** 上下滚动的跑马灯 */
 @interface JhtVerticalMarquee : UIView
-#pragma mark - Block
-/** 每次滚动到某一个值 显示的block */
-typedef void(^verticalMarqueeBlock)(JhtVerticalMarquee *view, NSInteger currentIndex);
-
-
-
 #pragma mark - Property
 #pragma mark required
 /** 滚动文字的 数据源数组（支持attributedText与text混合） */
@@ -38,7 +32,7 @@ typedef void(^verticalMarqueeBlock)(JhtVerticalMarquee *view, NSInteger currentI
 
 
 #pragma mark optional
-/** 当前显示展示的文字在数据源数组中的索引_只读 */
+/** 当前显示展示的文字 在数据源数组中的索引_只读 */
 @property (nonatomic, assign, readonly) NSInteger currentIndex;
 
 /** 是否为逆时针滚动（default：NO）
@@ -82,6 +76,7 @@ typedef void(^verticalMarqueeBlock)(JhtVerticalMarquee *view, NSInteger currentI
 - (void)marqueeOfSettingWithState:(MarqueeState_V)marqueeState;
 
 /** 每次滚动回调的Block */
+typedef void(^verticalMarqueeBlock)(JhtVerticalMarquee *view, NSInteger currentIndex);
 - (void)scrollWithCallbackBlock:(verticalMarqueeBlock)block;
 
 
