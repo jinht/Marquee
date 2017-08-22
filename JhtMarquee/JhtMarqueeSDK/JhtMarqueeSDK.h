@@ -6,7 +6,7 @@
 //  CSDN博客: http://blog.csdn.net/anticipate91
 //
 //  Created by Jht on 16/8/29.
-//  Copyright © 2016年 Jht. All rights reserved.
+//  Copyright © 2016年 JhtMarquee. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
