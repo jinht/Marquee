@@ -118,10 +118,10 @@
 		8E3400931ED7D64700ECC223 /* JhtMarqueeSDK */ = {
 			isa = PBXGroup;
 			children = (
-				8E3400951ED7D64700ECC223 /* JhtMarqueeSDK.a */,
 				8E3400961ED7D64700ECC223 /* JhtMarqueeSDK.h */,
 				8E3400971ED7D64700ECC223 /* JhtVerticalMarquee.h */,
 				8E3400941ED7D64700ECC223 /* JhtHorizontalMarquee.h */,
+				8E3400951ED7D64700ECC223 /* JhtMarqueeSDK.a */,
 			);
 			path = JhtMarqueeSDK;
 			sourceTree = "<group>";
