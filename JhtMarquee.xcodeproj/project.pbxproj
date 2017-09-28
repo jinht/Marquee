@@ -15,7 +15,7 @@
 		78808AE31E6EADB60081C941 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78808AD61E6EADB60081C941 /* main.m */; };
 		78808AE41E6EADB60081C941 /* testVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 78808AD91E6EADB60081C941 /* testVC.m */; };
 		78808AE51E6EADB60081C941 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78808ADB1E6EADB60081C941 /* ViewController.m */; };
-		8E3400981ED7D64700ECC223 /* JhtMarqueeSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E3400951ED7D64700ECC223 /* JhtMarqueeSDK.a */; };
+		A52039D21F7C9E8400272F6F /* JhtMarquee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52039591F7BAB0800272F6F /* JhtMarquee.framework */; };
 		A58F83FA1E1120BE00E30D68 /* JhtMarqueeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A58F83F91E1120BE00E30D68 /* JhtMarqueeTests.m */; };
 		A58F84051E1120BE00E30D68 /* JhtMarqueeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A58F84041E1120BE00E30D68 /* JhtMarqueeUITests.m */; };
 /* End PBXBuildFile section */
@@ -49,10 +49,7 @@
 		78808AD91E6EADB60081C941 /* testVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testVC.m; sourceTree = "<group>"; };
 		78808ADA1E6EADB60081C941 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		78808ADB1E6EADB60081C941 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		8E3400941ED7D64700ECC223 /* JhtHorizontalMarquee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtHorizontalMarquee.h; sourceTree = "<group>"; };
-		8E3400951ED7D64700ECC223 /* JhtMarqueeSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = JhtMarqueeSDK.a; sourceTree = "<group>"; };
-		8E3400961ED7D64700ECC223 /* JhtMarqueeSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtMarqueeSDK.h; sourceTree = "<group>"; };
-		8E3400971ED7D64700ECC223 /* JhtVerticalMarquee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtVerticalMarquee.h; sourceTree = "<group>"; };
+		A52039591F7BAB0800272F6F /* JhtMarquee.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JhtMarquee.framework; sourceTree = "<group>"; };
 		A58F83DC1E1120BE00E30D68 /* JhtMarquee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JhtMarquee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A58F83F51E1120BE00E30D68 /* JhtMarqueeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JhtMarqueeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A58F83F91E1120BE00E30D68 /* JhtMarqueeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JhtMarqueeTests.m; sourceTree = "<group>"; };
@@ -67,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E3400981ED7D64700ECC223 /* JhtMarqueeSDK.a in Frameworks */,
+				A52039D21F7C9E8400272F6F /* JhtMarquee.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +93,6 @@
 				78808ADA1E6EADB60081C941 /* ViewController.h */,
 				78808ADB1E6EADB60081C941 /* ViewController.m */,
 				78808AD71E6EADB60081C941 /* testVC */,
-				8E3400931ED7D64700ECC223 /* JhtMarqueeSDK */,
 				78808AC91E6EADB60081C941 /* Assets.xcassets */,
 				78808ACA1E6EADB60081C941 /* LaunchScreen.storyboard */,
 				78808ACC1E6EADB60081C941 /* Main.storyboard */,
@@ -115,24 +111,15 @@
 			path = testVC;
 			sourceTree = "<group>";
 		};
-		8E3400931ED7D64700ECC223 /* JhtMarqueeSDK */ = {
-			isa = PBXGroup;
-			children = (
-				8E3400961ED7D64700ECC223 /* JhtMarqueeSDK.h */,
-				8E3400971ED7D64700ECC223 /* JhtVerticalMarquee.h */,
-				8E3400941ED7D64700ECC223 /* JhtHorizontalMarquee.h */,
-				8E3400951ED7D64700ECC223 /* JhtMarqueeSDK.a */,
-			);
-			path = JhtMarqueeSDK;
-			sourceTree = "<group>";
-		};
 		A58F83D31E1120BE00E30D68 = {
 			isa = PBXGroup;
 			children = (
+				A52039591F7BAB0800272F6F /* JhtMarquee.framework */,
 				78808AC61E6EADB60081C941 /* JhtMarquee */,
 				A58F83F81E1120BE00E30D68 /* JhtMarqueeTests */,
 				A58F84031E1120BE00E30D68 /* JhtMarqueeUITests */,
 				A58F83DD1E1120BE00E30D68 /* Products */,
+				A5A0FE921F7B894900688220 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,6 +149,13 @@
 				A58F84061E1120BE00E30D68 /* Info.plist */,
 			);
 			path = JhtMarqueeUITests;
+			sourceTree = "<group>";
+		};
+		A5A0FE921F7B894900688220 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,7 +392,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -439,7 +433,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -451,13 +445,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = BY48QUJK83;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/JhtMarquee.framework",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/JhtMarquee.framework/Headers",
+				);
 				INFOPLIST_FILE = JhtMarquee/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/JhtMarquee/JhtMarqueeSDK",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jht.JhtMarquee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -468,13 +469,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = BY48QUJK83;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/JhtMarquee.framework",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/JhtMarquee.framework/Headers",
+				);
 				INFOPLIST_FILE = JhtMarquee/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/JhtMarquee/JhtMarqueeSDK",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jht.JhtMarquee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

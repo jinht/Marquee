@@ -11,8 +11,8 @@
 
 #import "ViewController.h"
 #import "testVC.h"
-#import "JhtVerticalMarquee.h"
-#import "JhtHorizontalMarquee.h"
+#import <JhtMarquee/JhtVerticalMarquee.h>
+#import <JhtMarquee/JhtHorizontalMarquee.h>
 
 /** 屏幕的宽度 */
 #define FrameW [UIScreen mainScreen].bounds.size.width
@@ -87,7 +87,7 @@
 #pragma mark 水平滚动的跑马灯
 /** 添加水平滚动的跑马灯 */
 - (void)addHorizontalMarquee {
-    _horizontalMarquee = [[JhtHorizontalMarquee alloc] initWithFrame:CGRectMake(0, 64, FrameW, 40) withSingleScrollDuration:10.0];
+    _horizontalMarquee = [[JhtHorizontalMarquee alloc] initWithFrame:CGRectMake(0, 64 + 20, FrameW, 40) withSingleScrollDuration:10.0];
     _horizontalMarquee.text = @"这是一个跑马灯View，测试一下好不好用，哈哈哈，😁👌😀 😁👌😀 😁👌😀 😁👌😀 哈哈哈哈！ ";
     [self.view addSubview:_horizontalMarquee];
     
@@ -97,7 +97,7 @@
 }
 
 - (void)horizontalMarqueeTapGes:(UITapGestureRecognizer *)ges {
-    NSLog(@"点击__水平__滚动的跑马灯啦啊！！！");
+    NSLog(@"点击__水平__滚动的跑马灯啦！！！");
     [_verticalMarquee marqueeOfSettingWithState:MarqueePause_V];
     _isPauseV = YES;
     
@@ -137,7 +137,7 @@
 //    _verticalMarquee.isCounterclockwise = YES;
     _verticalMarquee.sourceArray = soureArray;
     [_verticalMarquee scrollWithCallbackBlock:^(JhtVerticalMarquee *view, NSInteger currentIndex) {
-        NSLog(@"滚动到第 %ld 条数据", currentIndex);
+        NSLog(@"滚动到第 %ld 条数据", (long)currentIndex);
     }];
     
     // 开始滚动
@@ -149,7 +149,7 @@
 }
 
 - (void)verticalMarqueeTapGes:(UITapGestureRecognizer *)ges {
-    NSLog(@"点击__纵向__滚动的跑马灯_第 %ld 条数据啦啊！！！", _verticalMarquee.currentIndex);
+    NSLog(@"点击__纵向__滚动的跑马灯_第 %ld 条数据啦！！！", (long)_verticalMarquee.currentIndex);
     [_verticalMarquee marqueeOfSettingWithState:MarqueePause_V];
     _isPauseV = YES;
     
