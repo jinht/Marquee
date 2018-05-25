@@ -9,26 +9,14 @@
 //  Copyright © 2016年 JhtMarquee. All rights reserved.
 //
 
-/************支持attributedText************/
-
 #import <UIKit/UIKit.h>
+#import "JhtHorizontalMarquee_Define.h"
 
-/** 跑马灯状态_枚举 */
-typedef NS_ENUM(NSUInteger, MarqueeState_H) {
-    // 开启
-    MarqueeStart_H,
-    // 关闭
-    MarqueeShutDown_H,
-    // 暂停
-    MarqueePause_H,
-    // 取消暂停（继续）
-    MarqueeContinue_H,
-};
-
-/** 水平滚动的跑马灯 */
+/** 横向 跑马灯 */
 @interface JhtHorizontalMarquee : UILabel
+
 #pragma mark - property
-/** 获取_是否处于_暂停状态（只读） */
+/** 获取_是否处于_暂停状态 */
 @property (nonatomic, assign, readonly) BOOL isPaused;
 
 
@@ -41,8 +29,8 @@ typedef NS_ENUM(NSUInteger, MarqueeState_H) {
 
 #pragma mark 设置跑马灯状态
 /** 设置跑马灯状态
- *  marqueeState：跑马灯状态（枚举）
- *  注：“开启跑马灯”放在viewDidAppear中，“关闭跑马灯”放在viewWillDisappear中
+ *  marqueeState：跑马灯状态（MarqueeState_H）
+ *  注：《开启跑马灯》放在viewDidAppear中，《关闭跑马灯》放在viewWillDisappear中
  */
 - (void)marqueeOfSettingWithState:(MarqueeState_H)marqueeState;
 

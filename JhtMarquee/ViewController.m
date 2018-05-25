@@ -18,12 +18,12 @@
 #define FrameW [UIScreen mainScreen].bounds.size.width
 
 @interface ViewController () <UIGestureRecognizerDelegate> {
-    // 水平滚动的跑马灯
+    // 横向 跑马灯
     JhtHorizontalMarquee *_horizontalMarquee;
     
-    // 上下滚动的跑马灯
+    // 纵向 跑马灯
     JhtVerticalMarquee *_verticalMarquee;
-    // 是否暂停了上下滚动的跑马灯
+    // 是否暂停了纵向 跑马灯
     BOOL _isPauseV;
 }
 
@@ -34,7 +34,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    // 如果暂停了，使用继续方式开启
+    
     if (_isPauseV) {
         [_verticalMarquee marqueeOfSettingWithState:MarqueeContinue_V];
     }
@@ -55,106 +55,129 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+    
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
         self.navigationController.interactivePopGestureRecognizer.enabled = YES;
         self.navigationController.interactivePopGestureRecognizer.delegate = self;
-    }
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0) {
+
+#else
         self.navigationController.interactivePopGestureRecognizer.delegate = self;
-    }
+#endif
     
-    // 创建UI界面
     [self createUI];
 }
 
 
 
 #pragma mark - UI
-/** 创建UI界面 */
+/** createUI */
 - (void)createUI {
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.title = @"JhtMarqueeDemo";
     
-    // 添加水平滚动的跑马灯
+    // 添加 横向 跑马灯
     [self addHorizontalMarquee];
     
-    // 添加上下滚动的跑马灯
+    // 添加 纵向 跑马灯
     [self addVerticalMarquee];
 }
 
 
-#pragma mark 水平滚动的跑马灯
-/** 添加水平滚动的跑马灯 */
+#pragma mark 横向 跑马灯
+/** 添加 横向 跑马灯 */
 - (void)addHorizontalMarquee {
-    _horizontalMarquee = [[JhtHorizontalMarquee alloc] initWithFrame:CGRectMake(0, 64 + 20, FrameW, 40) withSingleScrollDuration:10.0];
-    _horizontalMarquee.text = @"这是一个跑马灯View，测试一下好不好用，哈哈哈，😁👌😀 😁👌😀 😁👌😀 😁👌😀 哈哈哈哈！ ";
-    [self.view addSubview:_horizontalMarquee];
-    
-    // 给跑马灯添加点击手势
-    UITapGestureRecognizer *htap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(horizontalMarqueeTapGes:)];
-    [_horizontalMarquee addGestureRecognizer:htap];
-}
-
-- (void)horizontalMarqueeTapGes:(UITapGestureRecognizer *)ges {
-    NSLog(@"点击__水平__滚动的跑马灯啦！！！");
-    [_verticalMarquee marqueeOfSettingWithState:MarqueePause_V];
-    _isPauseV = YES;
-    
-    [self.navigationController pushViewController:[[testVC alloc] init] animated:YES];
+    self.horizontalMarquee.text = @" 这是一个跑马灯View，测试一下好不好用，哈哈哈，😁👌😀 😁👌😀 😁👌😀 😁👌😀 哈哈哈哈！ ";
+    [self.view addSubview:self.horizontalMarquee];
 }
 
 
-#pragma mark 上下滚动的跑马灯
-/** 添加上下滚动的跑马灯 */
+#pragma mark 纵向 跑马灯
+/** 添加纵向 跑马灯 */
 - (void)addVerticalMarquee {
-    _verticalMarquee = [[JhtVerticalMarquee alloc]  initWithFrame:CGRectMake(10, 200, FrameW - 20, 45)];
-    [self.view addSubview:_verticalMarquee];
-    _verticalMarquee.backgroundColor = [UIColor yellowColor];
-    _verticalMarquee.verticalTextColor = [UIColor purpleColor];
-//    NSArray *soureArray = @[@"1. 谁曾从谁的青春里走过，留下了笑靥",
-//                            @"2. 谁曾在谁的花季里停留，温暖了想念",
-//                            @"3. 谁又从谁的雨季里消失，泛滥了眼泪",
-//                            @"4. 人生路，路迢迢，谁道自古英雄多寂寥，若一朝，看透了，一身清风挣多少"
-//                            ];
+    [self.view addSubview:self.verticalMarquee];
+    
+    [self.verticalMarquee scrollWithCallbackBlock:^(JhtVerticalMarquee *view, NSInteger currentIndex) {
+        NSLog(@"滚动到第 %ld 条数据", (long)currentIndex);
+    }];
+    /*
+    NSArray *soureArray = @[@"1. 谁曾从谁的青春里走过，留下了笑靥",
+                            @"2. 谁曾在谁的花季里停留，温暖了想念",
+                            @"3. 谁又从谁的雨季里消失，泛滥了眼泪",
+                            @"4. 人生路，路迢迢，谁道自古英雄多寂寥，若一朝，看透了，一身清风挣多少"
+                            ];
+     */
     
     NSString *str = @"谁曾在谁的花季里停留，温暖了想念";
-    // 创建NSMutableAttributedString
     NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc]initWithString:str];
-    // 设置字体和设置字体的范围
     [attrStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:30.0f] range:NSMakeRange(0, 3)];
-    // 添加文字颜色
     [attrStr addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(4, 2)];
-    // 添加文字背景颜色
     [attrStr addAttribute:NSBackgroundColorAttributeName value:[UIColor orangeColor] range:NSMakeRange(7, 2)];
-    // 添加下划线
     [attrStr addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(11, 5)];
+    
     NSArray *soureArray = @[@"1. 谁曾从谁的青春里走过，留下了笑靥",
                             attrStr,
                             @"3. 谁又从谁的雨季里消失，泛滥了眼泪",
                             @"4. 人生路，路迢迢，谁道自古英雄多寂寥，若一朝，看透了，一身清风挣多少"];
     
-//    _verticalMarquee.isCounterclockwise = YES;
-    _verticalMarquee.sourceArray = soureArray;
-    [_verticalMarquee scrollWithCallbackBlock:^(JhtVerticalMarquee *view, NSInteger currentIndex) {
-        NSLog(@"滚动到第 %ld 条数据", (long)currentIndex);
-    }];
+    self.verticalMarquee.sourceArray = soureArray;
     
     // 开始滚动
-    [_verticalMarquee marqueeOfSettingWithState:MarqueeStart_V];
-    
-    // 给跑马灯添加点击手势
-    UITapGestureRecognizer *vtap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(verticalMarqueeTapGes:)];
-    [_verticalMarquee addGestureRecognizer:vtap];
+    [self.verticalMarquee marqueeOfSettingWithState:MarqueeStart_V];
 }
 
-- (void)verticalMarqueeTapGes:(UITapGestureRecognizer *)ges {
-    NSLog(@"点击__纵向__滚动的跑马灯_第 %ld 条数据啦！！！", (long)_verticalMarquee.currentIndex);
-    [_verticalMarquee marqueeOfSettingWithState:MarqueePause_V];
+
+
+#pragma mark - Get
+/** 横向 跑马灯 */
+- (JhtHorizontalMarquee *)horizontalMarquee {
+    if (!_horizontalMarquee) {
+        _horizontalMarquee = [[JhtHorizontalMarquee alloc] initWithFrame:CGRectMake(0, 66, FrameW, 40) withSingleScrollDuration:10.0];
+        
+        // 添加点击手势
+        UITapGestureRecognizer *htap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(horizontalMarqueeTapGes:)];
+        [_horizontalMarquee addGestureRecognizer:htap];
+    }
+    
+    return _horizontalMarquee;
+}
+
+/** 纵向 跑马灯 */
+- (JhtVerticalMarquee *)verticalMarquee {
+    if (!_verticalMarquee) {
+        _verticalMarquee = [[JhtVerticalMarquee alloc]  initWithFrame:CGRectMake(10, CGRectGetMaxY(self.horizontalMarquee.frame) + 40, FrameW - 20, 45)];
+        
+        _verticalMarquee.backgroundColor = [UIColor yellowColor];
+        _verticalMarquee.verticalTextColor = [UIColor purpleColor];
+        
+        // 添加点击手势
+        UITapGestureRecognizer *vtap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(verticalMarqueeTapGes:)];
+        [_verticalMarquee addGestureRecognizer:vtap];
+    }
+    
+    return _verticalMarquee;
+}
+
+
+#pragma mark Get Method
+/** 点击 水平滚动跑马灯 触发方法 */
+- (void)horizontalMarqueeTapGes:(UITapGestureRecognizer *)ges {
+    NSLog(@"点击__水平__滚动的跑马灯啦！！！");
+    [self.verticalMarquee marqueeOfSettingWithState:MarqueePause_V];
     _isPauseV = YES;
     
     [self.navigationController pushViewController:[[testVC alloc] init] animated:YES];
 }
+
+/** 点击 纵向滚动跑马灯 触发方法 */
+- (void)verticalMarqueeTapGes:(UITapGestureRecognizer *)ges {
+    NSLog(@"点击__纵向__滚动的跑马灯_第 %ld 条数据啦！！！", (long)self.verticalMarquee.currentIndex);
+    [self.verticalMarquee marqueeOfSettingWithState:MarqueePause_V];
+    _isPauseV = YES;
+    
+    [self.navigationController pushViewController:[[testVC alloc] init] animated:YES];
+}
+
 
 
 
