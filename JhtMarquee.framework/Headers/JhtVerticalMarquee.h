@@ -25,6 +25,13 @@
 /** 当前展示内容 索引 */
 @property (nonatomic, assign, readonly) NSInteger currentIndex;
 
+/** 是否为逆时针滚动
+ *  default：NO
+ *  顺时针：底部 ===> 顶部
+ *  逆时针：顶部 ===> 底部
+ */
+@property (nonatomic, assign) BOOL isCounterclockwise;
+
 /** 单次滚动 时间
  *  default：0.5f
  */
@@ -55,7 +62,7 @@
 
 #pragma mark - Public Method
 /** 设置跑马灯状态
- *  marqueeState：跑马灯状态（MarqueeState_V）
+ *  marqueeState：状态（MarqueeState_V）
  */
 - (void)marqueeOfSettingWithState:(MarqueeState_V)marqueeState;
 

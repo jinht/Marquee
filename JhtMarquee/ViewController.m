@@ -14,7 +14,7 @@
 #import <JhtMarquee/JhtVerticalMarquee.h>
 #import <JhtMarquee/JhtHorizontalMarquee.h>
 
-/** 屏幕的宽度 */
+
 #define FrameW [UIScreen mainScreen].bounds.size.width
 
 @interface ViewController () <UIGestureRecognizerDelegate> {
@@ -54,7 +54,6 @@
     [super viewDidLoad];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
     
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
         self.navigationController.interactivePopGestureRecognizer.enabled = YES;
@@ -120,6 +119,7 @@
                             @"3. 谁又从谁的雨季里消失，泛滥了眼泪",
                             @"4. 人生路，路迢迢，谁道自古英雄多寂寥，若一朝，看透了，一身清风挣多少"];
     
+//    self.verticalMarquee.isCounterclockwise = YES;
     self.verticalMarquee.sourceArray = soureArray;
     
     // 开始滚动
@@ -134,8 +134,9 @@
     if (!_horizontalMarquee) {
         _horizontalMarquee = [[JhtHorizontalMarquee alloc] initWithFrame:CGRectMake(0, 66, FrameW, 40) withSingleScrollDuration:10.0];
         
+        _horizontalMarquee.tag = 100;
         // 添加点击手势
-        UITapGestureRecognizer *htap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(horizontalMarqueeTapGes:)];
+        UITapGestureRecognizer *htap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(marqueeTapGes:)];
         [_horizontalMarquee addGestureRecognizer:htap];
     }
     
@@ -147,11 +148,12 @@
     if (!_verticalMarquee) {
         _verticalMarquee = [[JhtVerticalMarquee alloc]  initWithFrame:CGRectMake(10, CGRectGetMaxY(self.horizontalMarquee.frame) + 40, FrameW - 20, 45)];
         
+        _verticalMarquee.tag = 101;
         _verticalMarquee.backgroundColor = [UIColor yellowColor];
         _verticalMarquee.verticalTextColor = [UIColor purpleColor];
         
         // 添加点击手势
-        UITapGestureRecognizer *vtap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(verticalMarqueeTapGes:)];
+        UITapGestureRecognizer *vtap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(marqueeTapGes:)];
         [_verticalMarquee addGestureRecognizer:vtap];
     }
     
@@ -160,18 +162,15 @@
 
 
 #pragma mark Get Method
-/** 点击 水平滚动跑马灯 触发方法 */
-- (void)horizontalMarqueeTapGes:(UITapGestureRecognizer *)ges {
-    NSLog(@"点击__水平__滚动的跑马灯啦！！！");
-    [self.verticalMarquee marqueeOfSettingWithState:MarqueePause_V];
-    _isPauseV = YES;
+/** 点击 滚动跑马灯 触发方法 */
+- (void)marqueeTapGes:(UITapGestureRecognizer *)ges {
+    if (ges.view.tag == 100) {
+        NSLog(@"点击__水平__滚动的跑马灯啦！！！");
+        
+    } else if (ges.view.tag == 101) {
+        NSLog(@"点击__纵向__滚动的跑马灯_第 %ld 条数据啦！！！", (long)self.verticalMarquee.currentIndex);
+    }
     
-    [self.navigationController pushViewController:[[testVC alloc] init] animated:YES];
-}
-
-/** 点击 纵向滚动跑马灯 触发方法 */
-- (void)verticalMarqueeTapGes:(UITapGestureRecognizer *)ges {
-    NSLog(@"点击__纵向__滚动的跑马灯_第 %ld 条数据啦！！！", (long)self.verticalMarquee.currentIndex);
     [self.verticalMarquee marqueeOfSettingWithState:MarqueePause_V];
     _isPauseV = YES;
     
