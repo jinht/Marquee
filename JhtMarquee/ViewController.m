@@ -116,8 +116,8 @@
     
     NSArray *soureArray = @[@"1. 谁曾从谁的青春里走过，留下了笑靥",
                             attrStr,
-                            @"3. 谁又从谁的雨季里消失，泛滥了眼泪",
-                            @"4. 人生路，路迢迢，谁道自古英雄多寂寥，若一朝，看透了，一身清风挣多少"];
+                            @"3. 谁又从谁的雨季里消失，泛滥了眼泪\n\n    颤抖吧",
+                            @"4. 人生路，路迢迢，谁道自古英雄多寂寥\n\n    若一朝，看透了，一身清风挣多少"];
     
 //    self.verticalMarquee.isCounterclockwise = YES;
     self.verticalMarquee.sourceArray = soureArray;
@@ -146,9 +146,11 @@
 /** 纵向 跑马灯 */
 - (JhtVerticalMarquee *)verticalMarquee {
     if (!_verticalMarquee) {
-        _verticalMarquee = [[JhtVerticalMarquee alloc]  initWithFrame:CGRectMake(10, CGRectGetMaxY(self.horizontalMarquee.frame) + 40, FrameW - 20, 45)];
+        _verticalMarquee = [[JhtVerticalMarquee alloc]  initWithFrame:CGRectMake(10, CGRectGetMaxY(self.horizontalMarquee.frame) + 40, FrameW - 20, 60)];
         
         _verticalMarquee.tag = 101;
+//        _verticalMarquee.isCounterclockwise = YES;
+        _verticalMarquee.verticalNumberOfLines = 0;
         _verticalMarquee.backgroundColor = [UIColor yellowColor];
         _verticalMarquee.verticalTextColor = [UIColor purpleColor];
         
