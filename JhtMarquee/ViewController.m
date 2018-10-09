@@ -56,11 +56,11 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
-        self.navigationController.interactivePopGestureRecognizer.enabled = YES;
-        self.navigationController.interactivePopGestureRecognizer.delegate = self;
-
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
+    
 #else
-        self.navigationController.interactivePopGestureRecognizer.delegate = self;
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
 #endif
     
     [self createUI];
@@ -73,6 +73,7 @@
 - (void)createUI {
     self.view.backgroundColor = [UIColor whiteColor];
     
+    self.navigationController.navigationBar.translucent = NO;
     self.title = @"JhtMarqueeDemo";
     
     // 添加 横向 跑马灯
@@ -86,7 +87,7 @@
 #pragma mark 横向 跑马灯
 /** 添加 横向 跑马灯 */
 - (void)addHorizontalMarquee {
-    self.horizontalMarquee.text = @" 这是一个跑马灯View，测试一下好不好用，哈哈哈，😁👌😀 😁👌😀 😁👌😀 😁👌😀 哈哈哈哈！ ";
+    self.horizontalMarquee.text = @" 这是一个跑马灯View，测试一下好不好用，哈哈哈，😁👌😀 😁👌😀 😁👌😀 😁👌😀 哈哈哈哈！  这是一个跑马灯View，测试一下好不好用，哈哈哈，😁👌😀 😁👌😀 😁👌😀 😁👌😀 哈哈哈哈！  这是一个跑马灯View，测试一下好不好用，哈哈哈，😁👌😀 😁👌😀 😁👌😀 😁👌😀 哈哈哈哈！  这是一个跑马灯View，测试一下好不好用，哈哈哈，😁👌😀 😁👌😀 😁👌😀 😁👌😀 哈哈哈哈！ ";
     [self.view addSubview:self.horizontalMarquee];
 }
 
@@ -132,7 +133,7 @@
 /** 横向 跑马灯 */
 - (JhtHorizontalMarquee *)horizontalMarquee {
     if (!_horizontalMarquee) {
-        _horizontalMarquee = [[JhtHorizontalMarquee alloc] initWithFrame:CGRectMake(0, 66, FrameW, 40) withSingleScrollDuration:10.0];
+        _horizontalMarquee = [[JhtHorizontalMarquee alloc] initWithFrame:CGRectMake(0, 66, FrameW, 40) singleScrollDuration:0.0];
         
         _horizontalMarquee.tag = 100;
         // 添加点击手势
