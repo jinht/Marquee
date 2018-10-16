@@ -23,7 +23,8 @@
 #### a. 简单的集成方式：当成一个普通label使用即可，在初始化方法的时候可以自定义单次滚动时间
 ```oc
 /** 初始化
- *  duration：单次滚动时间
+ *  duration: 单次滚动时间
+ *  注: duration = 0.0，使用内部自适应计算功能
  */
 - (instancetype)initWithFrame:(CGRect)frame withSingleScrollDuration:(NSTimeInterval)duration;
 ```
