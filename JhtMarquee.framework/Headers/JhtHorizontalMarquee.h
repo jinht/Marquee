@@ -18,6 +18,10 @@
 #pragma mark - property
 /** 当前_是否为_暂停状态 */
 @property (nonatomic, assign, readonly) BOOL isPaused;
+/** 单次滚动时间
+ *  注: 初始化 单次滚动时间《使用内部自适应计算功能》，singleScrollDuration 为内部计算结果
+ */
+@property (nonatomic, assign, readonly) CGFloat singleScrollDuration;
 
 
 
