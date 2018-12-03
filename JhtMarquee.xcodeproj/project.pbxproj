@@ -14,9 +14,6 @@
 		78808AE31E6EADB60081C941 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78808AD61E6EADB60081C941 /* main.m */; };
 		78808AE41E6EADB60081C941 /* testVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 78808AD91E6EADB60081C941 /* testVC.m */; };
 		78808AE51E6EADB60081C941 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78808ADB1E6EADB60081C941 /* ViewController.m */; };
-		A52039D21F7C9E8400272F6F /* JhtMarquee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52039591F7BAB0800272F6F /* JhtMarquee.framework */; };
-		A58F83FA1E1120BE00E30D68 /* JhtMarqueeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A58F83F91E1120BE00E30D68 /* JhtMarqueeTests.m */; };
-		A58F84051E1120BE00E30D68 /* JhtMarqueeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A58F84041E1120BE00E30D68 /* JhtMarqueeUITests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,14 +45,11 @@
 		78808AD91E6EADB60081C941 /* testVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testVC.m; sourceTree = "<group>"; };
 		78808ADA1E6EADB60081C941 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		78808ADB1E6EADB60081C941 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		A52039591F7BAB0800272F6F /* JhtMarquee.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JhtMarquee.framework; sourceTree = "<group>"; };
+		7DB98020408A777894158D8C /* Pods-JhtMarquee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JhtMarquee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JhtMarquee/Pods-JhtMarquee.debug.xcconfig"; sourceTree = "<group>"; };
+		915E08394DDE1BE363D2768A /* Pods-JhtMarquee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JhtMarquee.release.xcconfig"; path = "Pods/Target Support Files/Pods-JhtMarquee/Pods-JhtMarquee.release.xcconfig"; sourceTree = "<group>"; };
 		A58F83DC1E1120BE00E30D68 /* JhtMarquee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JhtMarquee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A58F83F51E1120BE00E30D68 /* JhtMarqueeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JhtMarqueeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A58F83F91E1120BE00E30D68 /* JhtMarqueeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JhtMarqueeTests.m; sourceTree = "<group>"; };
-		A58F83FB1E1120BE00E30D68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A58F84001E1120BE00E30D68 /* JhtMarqueeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JhtMarqueeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A58F84041E1120BE00E30D68 /* JhtMarqueeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JhtMarqueeUITests.m; sourceTree = "<group>"; };
-		A58F84061E1120BE00E30D68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +57,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A52039D21F7C9E8400272F6F /* JhtMarquee.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,12 +106,9 @@
 		A58F83D31E1120BE00E30D68 = {
 			isa = PBXGroup;
 			children = (
-				A52039591F7BAB0800272F6F /* JhtMarquee.framework */,
 				78808AC61E6EADB60081C941 /* JhtMarquee */,
-				A58F83F81E1120BE00E30D68 /* JhtMarqueeTests */,
-				A58F84031E1120BE00E30D68 /* JhtMarqueeUITests */,
 				A58F83DD1E1120BE00E30D68 /* Products */,
-				A5A0FE921F7B894900688220 /* Frameworks */,
+				ED47B7D4734B565D03C24BF0 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,29 +122,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A58F83F81E1120BE00E30D68 /* JhtMarqueeTests */ = {
+		ED47B7D4734B565D03C24BF0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A58F83F91E1120BE00E30D68 /* JhtMarqueeTests.m */,
-				A58F83FB1E1120BE00E30D68 /* Info.plist */,
+				7DB98020408A777894158D8C /* Pods-JhtMarquee.debug.xcconfig */,
+				915E08394DDE1BE363D2768A /* Pods-JhtMarquee.release.xcconfig */,
 			);
-			path = JhtMarqueeTests;
-			sourceTree = "<group>";
-		};
-		A58F84031E1120BE00E30D68 /* JhtMarqueeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A58F84041E1120BE00E30D68 /* JhtMarqueeUITests.m */,
-				A58F84061E1120BE00E30D68 /* Info.plist */,
-			);
-			path = JhtMarqueeUITests;
-			sourceTree = "<group>";
-		};
-		A5A0FE921F7B894900688220 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +138,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A58F84091E1120BE00E30D68 /* Build configuration list for PBXNativeTarget "JhtMarquee" */;
 			buildPhases = (
+				9F2D85EB0A13897E3255D8E8 /* [CP] Check Pods Manifest.lock */,
 				A58F83D81E1120BE00E30D68 /* Sources */,
 				A58F83D91E1120BE00E30D68 /* Frameworks */,
 				A58F83DA1E1120BE00E30D68 /* Resources */,
@@ -224,7 +199,7 @@
 				TargetAttributes = {
 					A58F83DB1E1120BE00E30D68 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = BY48QUJK83;
+						DevelopmentTeam = 8C4D9692Z4;
 						ProvisioningStyle = Automatic;
 					};
 					A58F83F41E1120BE00E30D68 = {
@@ -287,6 +262,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9F2D85EB0A13897E3255D8E8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JhtMarquee-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A58F83D81E1120BE00E30D68 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -303,7 +299,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A58F83FA1E1120BE00E30D68 /* JhtMarqueeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +306,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A58F84051E1120BE00E30D68 /* JhtMarqueeUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,19 +434,17 @@
 		};
 		A58F840A1E1120BE00E30D68 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DB98020408A777894158D8C /* Pods-JhtMarquee.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = BY48QUJK83;
+				DEVELOPMENT_TEAM = 8C4D9692Z4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/JhtMarquee.framework/Headers",
-				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = JhtMarquee/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -466,19 +458,17 @@
 		};
 		A58F840B1E1120BE00E30D68 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 915E08394DDE1BE363D2768A /* Pods-JhtMarquee.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = BY48QUJK83;
+				DEVELOPMENT_TEAM = 8C4D9692Z4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/JhtMarquee.framework/Headers",
-				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = JhtMarquee/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
