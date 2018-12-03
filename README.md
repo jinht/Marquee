@@ -18,7 +18,19 @@
 
 
 ## How to use
-### 1. 水平：水平向左滚动的跑马灯
+### 1. podfile 
+```oc
+platform:ios, '8.0'
+
+target '*****' do
+
+pod 'JhtMarquee', '~> 1.0.0'
+        
+end
+```
+
+
+### 2. 水平：水平向左滚动的跑马灯
 
 #### a. 简单的集成方式：当成一个普通label使用即可，在初始化方法的时候可以自定义单次滚动时间
 ```oc
@@ -57,7 +69,7 @@
 ```
 
 
-### 2. 上下：上下（正向 && 逆向）滚动的跑马灯
+### 3. 上下：上下（正向 && 逆向）滚动的跑马灯
 
 #### a. 简单的集成方式：正常初始化后，传入滚动文字的数据源数组即可
 
@@ -100,6 +112,9 @@
 /** 显示内容的行数（default：2） */
 @property (nonatomic, assign) NSInteger verticalNumberOfLines;
 ```
+
+
+* 在demo中可以查看具体使用方法（使用demo之前请先 **pod install** ）
 
 
 
