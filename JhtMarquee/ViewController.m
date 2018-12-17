@@ -14,7 +14,6 @@
 #import <JhtMarquee/JhtVerticalMarquee.h>
 #import <JhtMarquee/JhtHorizontalMarquee.h>
 
-
 #define FrameW [UIScreen mainScreen].bounds.size.width
 
 @interface ViewController () <UIGestureRecognizerDelegate> {
