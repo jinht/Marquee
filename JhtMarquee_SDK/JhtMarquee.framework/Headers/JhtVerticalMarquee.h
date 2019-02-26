@@ -17,7 +17,7 @@
 
 #pragma mark - Property
 #pragma mark required
-/** 跑马灯文字 数据源数组（支持attributedText与text混合） */
+/** 跑马灯文字 数据源数组（支持attributedText && text混合） */
 @property (nonatomic, strong) NSArray *sourceArray;
 
 
@@ -44,19 +44,19 @@
 /** 文字 颜色
  *  default: [UIColor blackColor]
  */
-@property (nonatomic, strong) UIColor *verticalTextColor;
+@property (nonatomic, strong) UIColor *textColor;
 /** 文字 字体
  *  default: [UIFont systemFontOfSize:14]
  */
-@property (nonatomic, strong) UIFont *verticalTextFont;
+@property (nonatomic, strong) UIFont *textFont;
 /** 文字 对齐方式
  *  default: NSTextAlignmentLeft
  */
-@property (nonatomic, assign) NSTextAlignment verticalTextAlignment;
+@property (nonatomic, assign) NSTextAlignment textAlignment;
 /** 文字 行数
  *  default: 2（注意一下self.frame的设置）
  */
-@property (nonatomic, assign) NSInteger verticalNumberOfLines;
+@property (nonatomic, assign) NSInteger numberOfLines;
 
 
 
@@ -66,7 +66,7 @@
  */
 - (void)marqueeOfSettingWithState:(MarqueeState_V)marqueeState;
 
-/** 滚动 回调 */
+/** 滚动 回调 Block */
 typedef void(^verticalMarqueeBlock)(JhtVerticalMarquee *view, NSInteger currentIndex);
 - (void)scrollWithCallbackBlock:(verticalMarqueeBlock)block;
 
