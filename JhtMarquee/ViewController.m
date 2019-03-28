@@ -152,9 +152,9 @@
         
         _verticalMarquee.tag = 101;
 //        _verticalMarquee.isCounterclockwise = YES;
-        _verticalMarquee.verticalNumberOfLines = 0;
+        _verticalMarquee.numberOfLines = 0;
         _verticalMarquee.backgroundColor = [UIColor yellowColor];
-        _verticalMarquee.verticalTextColor = [UIColor purpleColor];
+        _verticalMarquee.textColor = [UIColor purpleColor];
         
         // 添加点击手势
         UITapGestureRecognizer *vtap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(marqueeTapGes:)];
