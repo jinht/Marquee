@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
     
     s.name                       = 'JhtMarquee'
-    s.version                    = '1.0.6'
+    s.version                    = '1.0.7'
     s.summary                    = '跑马灯/滚动文字条'
     s.homepage                   = 'https://github.com/jinht/Marquee'
     s.license                    = { :type => 'MIT', :file => 'LICENSE' }
