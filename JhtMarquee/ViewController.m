@@ -66,7 +66,6 @@
 }
 
 
-
 #pragma mark - UI
 /** createUI */
 - (void)createUI {
@@ -82,7 +81,6 @@
     [self addVerticalMarquee];
 }
 
-
 #pragma mark 横向 跑马灯
 /** 添加 横向 跑马灯 */
 - (void)addHorizontalMarquee {
@@ -91,7 +89,6 @@
     
 //    NSLog(@"self.horizontalMarquee.singleScrollDuration => %lf", self.horizontalMarquee.singleScrollDuration);
 }
-
 
 #pragma mark 纵向 跑马灯
 /** 添加纵向 跑马灯 */
@@ -129,9 +126,7 @@
 }
 
 
-
-#pragma mark - Get
-/** 横向 跑马灯 */
+#pragma mark - Getter
 - (JhtHorizontalMarquee *)horizontalMarquee {
     if (!_horizontalMarquee) {
         _horizontalMarquee = [[JhtHorizontalMarquee alloc] initWithFrame:CGRectMake(0, 66, FrameW, 40) singleScrollDuration:0.0];
@@ -145,7 +140,6 @@
     return _horizontalMarquee;
 }
 
-/** 纵向 跑马灯 */
 - (JhtVerticalMarquee *)verticalMarquee {
     if (!_verticalMarquee) {
         _verticalMarquee = [[JhtVerticalMarquee alloc]  initWithFrame:CGRectMake(10, CGRectGetMaxY(self.horizontalMarquee.frame) + 40, FrameW - 20, 60)];
@@ -164,7 +158,6 @@
     return _verticalMarquee;
 }
 
-
 #pragma mark Get Method
 /** 点击 滚动跑马灯 触发方法 */
 - (void)marqueeTapGes:(UITapGestureRecognizer *)ges {
@@ -179,14 +172,6 @@
     _isPauseV = YES;
     
     [self.navigationController pushViewController:[[testVC alloc] init] animated:YES];
-}
-
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 

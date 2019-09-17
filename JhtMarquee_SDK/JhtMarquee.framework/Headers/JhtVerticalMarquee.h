@@ -20,7 +20,6 @@
 /** 跑马灯文字 数据源数组（支持attributedText && text混合） */
 @property (nonatomic, strong) NSArray *sourceArray;
 
-
 #pragma mark optional
 /** 当前展示内容 索引 */
 @property (nonatomic, assign, readonly) NSInteger currentIndex;
@@ -30,7 +29,7 @@
  *  顺时针: 底部 ===> 顶部
  *  逆时针: 顶部 ===> 底部
  */
-@property (nonatomic, assign) BOOL isCounterclockwise;
+@property (nonatomic, assign, getter=isCounterclockwise) BOOL counterclockwise;
 
 /** 单次滚动 时间
  *  default: 0.5f
@@ -57,7 +56,6 @@
  *  default: 2（注意一下self.frame的设置）
  */
 @property (nonatomic, assign) NSInteger numberOfLines;
-
 
 
 #pragma mark - Public Method

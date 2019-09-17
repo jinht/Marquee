@@ -11,7 +11,7 @@
 
 
 /** 跑马灯状态_枚举
- *  tip: 调用 MarqueeShutDown_V 后，需要调用 MarqueeStart_V 才能开启滚动
+ *  tips: 调用 MarqueeShutDown_V 后，需要调用 MarqueeStart_V 才能开启滚动
  */
 typedef NS_ENUM(NSUInteger, MarqueeState_V) {
     // 开启
